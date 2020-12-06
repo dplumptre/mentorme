@@ -1,0 +1,17 @@
+.dashboard_main_content {
+    padding-left: unset;
+    padding-left: unset;
+    padding-right: unset;
+}
+
+.breadcrumb-bar {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #e3e8eb;
+    padding: 15px 0;
+}
+
+.breadcrumb-bar .breadcrumb-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 5px 0 0;
+}
