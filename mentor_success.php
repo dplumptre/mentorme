@@ -21,6 +21,22 @@ $PAGE->requires->css('/local/mentorme/assets/css/custom.css');
 
 
 
+
+
+
+
+$code = new Mentorme();
+
+$code->connectToMentor($_GET['mentor_id']);
+
+
+
+
+// $profle = $code->getUserProfile($USER->id);
+// $gradeslug = $profle->grade;
+// $code->makeMentorOrMentee($_GET['id'],$_GET['role']);
+
+
 // Display page header.
 echo $OUTPUT->header();
 
@@ -46,21 +62,30 @@ echo $OUTPUT->header();
 			<!-- /Breadcrumb -->
 			
 			<!-- Page Content -->
-			<div class="content">
+            <div class="content success-page-cont">
 				<div class="container-fluid">
-					<div class="row">
-						<div class="col-12">
-							<h5>Blank Page</h5>
-							<?php
-							$roles = new Mentorme();
-							$result =  $roles->getAllRoles();
-						//	var_dump($result);
-							?>
+				
+					<div class="row justify-content-center">
+						<div class="col-lg-6">
+						
+							<!-- Success Card -->
+							<div class="card success-card">
+								<div class="card-body">
+									<div class="success-cont">
+										<i class="fas fa-check"></i>
+										<h3>Request Sent  Successfully!</h3>
+										<p>Kindly wait for approval from  <strong> <?php echo $code->getUser($_GET['mentor_id'])->firstname ;?> </strong></strong></p>
+										<a href="mentor_list.php" class="btn btn-primary view-inv-btn">Back to Mentor List</a>
+									</div>
+								</div>
+							</div>
+							<!-- /Success Card -->
+							
 						</div>
 					</div>
+					
 				</div>
-
-			</div>		
+			</div>	
 			<!-- /Page Content -->
 
 
